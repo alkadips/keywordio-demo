@@ -18,6 +18,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import { visuallyHidden } from '@mui/utils';
 import Donutchart from './Donutchart';
+import { Button } from '@mui/material';
 function createData(id, name, calories, fat, carbs, protein) {
   return {
     id,
@@ -289,8 +290,8 @@ export default function Dashboard() {
   return (
     <div>
        <div className='flex justify-between mt-5'>
-        <div className='ml-3 font-bold'  onClick={() => setToggleTable(!toggleTable)} >Toggle Table</div>
-        <div className='font-bold'  onClick={() => setToggleDonut(!toggleDonut)} >Toggle Donut</div>
+        <Button variant="contained" className='ml-3 font-bold'  onClick={() => setToggleTable(!toggleTable)} >Toggle Table</Button>
+        <Button variant="contained" className='font-bold'  onClick={() => setToggleDonut(!toggleDonut)} >Toggle Donut</Button>
 
 
         </div>

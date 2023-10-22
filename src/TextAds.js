@@ -1,4 +1,4 @@
-import { Button, Card, TextField } from "@mui/material";
+import { Button, Card, TextField, TextareaAutosize } from "@mui/material";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Dialog from "@mui/material/Dialog";
@@ -35,7 +35,7 @@ export default function TextAds() {
               <TextField
                 className="w-full"
                 size="small"
-                label="Small Outlined Input"
+               
               />
             </div>
           </div>
@@ -44,18 +44,15 @@ export default function TextAds() {
             <TextField
               className="w-full"
               size="small"
-              label="Small Outlined Input"
+             
             />
           </div>
         </div>
         <div style={{ width: "50%" }}>
           <div>Description 01</div>
           <div className="mt-2">
-            <TextField
-              style={{ height: "145px" }}
-              size="large"
-              className="w-full"
-            ></TextField>
+          <TextareaAutosize className="w-full" style={{height:'130px',border:'1px solid #cdc7c7'}}/>
+
           </div>
         </div>
       </div>
@@ -101,13 +98,13 @@ export default function TextAds() {
       <div className="mt-5 flex justify-end gap-5">
         <Link to="/createAs">
           <div>
-            <Button className="text-black" variant="outlined">
+            <Button sx={{textTransform: "none"}} style={{color:'black',fontWeight:'bold',padding:"8px 40px 8px 40px"}} variant="outlined">
               Back
             </Button>
           </div>
         </Link>
         <div>
-          <Button onClick={handleClickOpen} variant="contained">
+          <Button sx={{textTransform: "none"}} style={{padding:"8px 40px 8px 40px"}} onClick={handleClickOpen} color="primary" variant="contained">
             Submit
           </Button>
         </div>

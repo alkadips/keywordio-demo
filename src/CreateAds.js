@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Card } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 export default function CreateAds() {
@@ -15,76 +15,116 @@ export default function CreateAds() {
     setmediaAds(event.target.checked);
   };
   return (
-    <div className="shadow-md ... mt-5 p-5" style={{ height: "570px" }}>
-      <div className="ml-5">Create Ads</div>
-      <div className=" flex justify-center mt-5 gap-5 p-5">
-        <div
-          className="shadow-md ... rounded p-5"
-          style={{ height: "385px", width: "275px" }}
-        >
-          <div>
-            <input
-              onChange={handleChangeText}
-              checked={isCheckedText}
-              type="checkbox"
-              id="text"
-              name="text"
-              value="text"
-            />
-          </div>
-          <div
-            className="shadow-2xl ... rounded-3xl"
-            style={{ height: "225px", width: "190px", margin: "0 auto" }}
-          ></div>
-          <div className="create-ass">
-            <div className="text-secondary mt-5">Create</div>
-            <div className="font-bold">Text Ad</div>
-          </div>
-        </div>
-
-        <div
-          className="shadow-md ... rounded p-5"
-          style={{ height: "385px", width: "275px" }}
-        >
-          <div>
-            <input
-              onChange={handleChangeMedia}
-              checked={isCheckedMedia}
-              type="checkbox"
-              id="media"
-              name="media"
-              value="media"
-            />
-          </div>
-          <div
-            className="shadow-2xl ... rounded-3xl"
-            style={{ height: "225px", width: "190px", margin: "0 auto" }}
-          ></div>
-          <div className="create-ass1">
-            <div className="text-secondary mt-5">Create</div>
-            <div className="font-bold">Media Ad</div>
-          </div>
-        </div>
-      </div>
-
-      <Link
-        to={
-          mediaAds
-            ? "/mediaads"
-            : "/textads" && textads
-            ? "/textads"
-            : "/mediaads"
-        }
-      >
-        <div style={{ float: "right" }}>
-          <Button
-            style={{ padding: "10px 35px 10px 35px" }}
-            variant="contained"
+    <Card
+      sx={{ maxWidth: 1485 }}
+      style={{ margin:'0 auto',marginTop:'20px' }}
+      variant="outlined"
+      className="p-5"
+    >
+      <div style={{ height: "570px" }}>
+        <div>Create Ads</div>
+        <div className=" flex justify-center mt-5  p-5" style={{gap:'50px'}}>
+          <Card
+            sx={{ maxWidth: 300 }}
+            style={{  borderRadius:'10px' }}
+            variant="outlined"
+            
+            className=" p-5 rounded"
           >
-            Next
-          </Button>
+            <div>
+              <input
+                onChange={handleChangeText}
+                checked={isCheckedText}
+                type="checkbox"
+                id="text"
+                name="text"
+                value="text"
+                style={{height:'20px',width:'20px'}}
+              />
+            </div>
+            <Card
+              sx={{ maxWidth: 300 }}
+              style={{ borderRadius:'35px'}}
+              variant="outlined"
+              className=" p-5"
+            >
+              <div
+                className="rounded"
+                style={{ height: "385px", width: "275px" }}
+              >
+                <div
+                 
+                  style={{ height: "225px", width: "190px", margin: "0 auto" }}
+                ></div>
+                <div className="create-ass">
+                  <div className="text-secondary mt-5">Create</div>
+                  <div className="font-bold text-xl">Text Ad</div>
+                </div>
+              </div>
+            </Card>
+          </Card>
+
+          <Card
+            sx={{ maxWidth: 300 }}
+            style={{ borderRadius:'10px' }}
+            variant="outlined"
+            className=" p-5"
+          >
+             <div>
+                <input
+                  onChange={handleChangeMedia}
+                  checked={isCheckedMedia}
+                  type="checkbox"
+                  id="media"
+                  name="media"
+                  value="media"
+                  style={{height:'20px',width:'20px'}}
+
+                />
+              </div>
+              <Card
+              sx={{ maxWidth: 300 }}
+              style={{  borderRadius:'35px' }}
+              variant="outlined"
+              className=" p-5"
+            >
+            <div
+              className=" rounded p-5"
+              style={{ height: "385px", width: "275px" }}
+            >
+             
+              <div
+                className=" rounded-3xl"
+                style={{ height: "225px", width: "190px", margin: "0 auto" }}
+              ></div>
+              <div className="create-ass1">
+                <div className="text-secondary mt-5">Create</div>
+                <div className="font-bold text-xl">Media Ad</div>
+              </div>
+            </div>
+            </Card>
+          </Card>
         </div>
-      </Link>
-    </div>
+
+        <Link
+          to={
+            mediaAds
+              ? "/mediaads"
+              : "/textads" && textads
+              ? "/textads"
+              : "/mediaads"
+          }
+        >
+          <div style={{ float: "right" }}>
+            <Button
+              style={{ padding: "10px 35px 10px 35px" }}
+              variant="contained"
+            >
+              Next
+            </Button>
+          </div>
+        </Link>
+      </div>
+    </Card>
   );
 }

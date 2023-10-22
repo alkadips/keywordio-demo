@@ -5,6 +5,7 @@ import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 
 export default function MediaAds() {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ export default function MediaAds() {
       variant="outlined"
       className=" p-5"
     >
-      <div>Create Text & Media</div>
+      <div>Create Media</div>
       <div className="flex mt-5 justify-between gap-5">
         <div style={{ width: "50%" }}>
           <div>
@@ -35,7 +36,7 @@ export default function MediaAds() {
               <TextField
                 className="w-full"
                 size="small"
-                label="Small Outlined Input"
+                
               />
             </div>
           </div>
@@ -44,18 +45,14 @@ export default function MediaAds() {
             <TextField
               className="w-full"
               size="small"
-              label="Small Outlined Input"
+             
             />
           </div>
         </div>
         <div style={{ width: "50%" }}>
           <div>Description 01</div>
-          <div className="mt-2">
-            <TextField
-              style={{ height: "145px" }}
-              size="large"
-              className="w-full"
-            ></TextField>
+          <div className="mt-2" >
+            <TextareaAutosize className="w-full" style={{height:'130px',border:'1px solid #cdc7c7'}}/>
           </div>
         </div>
       </div>
@@ -121,13 +118,13 @@ export default function MediaAds() {
       <div className="mt-5 flex justify-end gap-5">
         <Link to="/createAs">
           <div>
-            <Button className="text-black" variant="outlined">
+            <Button sx={{textTransform: "none"}} style={{color:'black',fontWeight:'bold',padding:"8px 40px 8px 40px"}} variant="outlined">
               Back
             </Button>
           </div>
         </Link>
         <div>
-          <Button onClick={handleClickOpen} variant="contained">
+          <Button sx={{textTransform: "none"}} style={{padding:"8px 40px 8px 40px"}} onClick={handleClickOpen} variant="contained">
             Submit
           </Button>
         </div>
